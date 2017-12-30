@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Greenhouse\Model\SensorData" 
+		  table="sensordata">
+    <id name="id" type="integer" column="Id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="timestamp" type="string" column="Timestamp" length="20" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+	<many-to-one field="sensor" target-entity="Greenhouse\Model\Sensor">
+		<join-column name="SensorId" referenced-column-name="id" nullable="false"/>
+	</many-to-one>
+    <field name="value" type="float" column="SensorValue" precision="10" scale="0" nullable="false"/>
+    <field name="valueType" type="string" column="SensorValueType" length="6" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

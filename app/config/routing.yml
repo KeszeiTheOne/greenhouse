@@ -1,0 +1,11 @@
+home:
+  path: /
+  defaults:
+    _controller: AppBundle:Default:index
+#    resource: '@AppBundle/Controller/'
+#    type: annotation
+
+calendar:
+  path: /calendar
+  defaults:
+    _controller: AppBundle:SmartHome:calendarSample
