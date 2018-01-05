@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Resources/config/doctrine/ManualData.orm.xml</file>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Resources/config/doctrine/SensorData.orm.xml</file>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Entity/ManualData.php</file>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Entity/SensorData.php</file>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/AppBundle.php</file>
-            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Resources/config/doctrine/Sensor.orm.xml</file>
+            <file>file:/home/kebab/htdocs/smarthome/app/config/doctrine/ManualData.orm.xml</file>
+            <file>file:/home/kebab/htdocs/smarthome/tests/Greenhouse/OktoController/AddOktoController/AddOktoControllerTest.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/app/config/doctrine/OktoController.orm.xml</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/Greenhouse/Model/OktoController.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Command/SensorCommand.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/Crud/Gateway/PersisterGateway.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Doctrine/CrudGateway.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Command/GreetCommand.php</file>
+            <file>file:/home/kebab/htdocs/smarthome/src/AppBundle/Controller/SmartHomeController.php</file>
         </group>
     </open-files>
 </project-private>

@@ -2,7 +2,9 @@
 
 namespace AppBundle\Command;
 
-use Greenhouse\Model\Sensor;
+use Greenhouse\Model\OktoController;
+use Greenhouse\OktoController\AddOktoController\AddOktoControllerAction;
+use Greenhouse\OktoController\AddOktoController\AddOktoControllerRequest;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,11 +16,15 @@ class SensorCommand extends ContainerAwareCommand {
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output) {
-		$repo = $this->getContainer()->get("doctrine")->getRepository(Sensor::class);
+		$repo = $this->getContainer()->get("doctrine")->getRepository(OktoController::class);
 
-		foreach ($repo->findAll() as $value) {
-			$output->write($value->getLocation(), true);
-		}
+		$action = new AddOktoControllerAction("responder");
+		$action->setOktoControllerGateway($repo);
+
+		$request = new AddOktoControllerRequest();
+		$request->name = "name";
+
+		$action->run($request);
 	}
 
 }
