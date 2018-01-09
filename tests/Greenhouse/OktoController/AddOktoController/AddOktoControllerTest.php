@@ -2,17 +2,19 @@
 
 namespace Tests\Greenhouse\OktoController\AddOktoController;
 
+use Crud\Action\ActionTestCaseTait;
 use Crud\Exception\InvalidRequest;
 use Crud\Exception\UnexpectedType;
+use Crud\Testing\Fixtures\Action\RequestDummy;
 use Crud\Testing\Gateway\PersisterGatewaySpy;
-use Crud\Testing\ModelDummy;
-use Exception;
 use Greenhouse\Model\OktoController;
 use Greenhouse\OktoController\AddOktoController\AddOktoControllerAction;
 use Greenhouse\OktoController\AddOktoController\AddOktoControllerRequest;
 use PHPUnit\Framework\TestCase;
 
 class AddOktoControllerTest extends TestCase {
+
+	use ActionTestCaseTait;
 
 	/**
 	 * @var PersisterGatewaySpy
@@ -29,7 +31,7 @@ class AddOktoControllerTest extends TestCase {
 	 * @test
 	 */
 	public function givenUnkownRequest_whenRun_thenThrowsUnexpectedType() {
-		$this->assertRunThrows(new ModelDummy(), UnexpectedType::class);
+		$this->assertRunThrows(new RequestDummy(), UnexpectedType::class);
 	}
 
 	/**
@@ -67,22 +69,4 @@ class AddOktoControllerTest extends TestCase {
 		return $request;
 	}
 
-	protected function assertRunThrows($request, $expectedException) {
-		try {
-			$this->runAction($request);
-		}
-		catch (Exception $exc) {
-			$this->assertInstanceOf($expectedException, $exc, $exc->getMessage());
-			return $exc;
-		}
-
-		$this->fail("$expectedException should be thrown.");
-	}
-
 }
-
-
-
-
-
-

@@ -3,9 +3,10 @@
 namespace Tests\Greenhouse\Rule\AddRule;
 
 use Crud\Action\AbstractAction;
+use Crud\Action\Request;
 use Crud\Exception\InvalidRequest;
 use Crud\Exception\UnexpectedType;
-use Crud\Testing\ModelDummy;
+use Crud\Testing\Fixtures\Action\RequestDummy;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +16,7 @@ class AddRuleTest extends TestCase {
 	 * @test
 	 */
 	public function givenUnknownRequest_whenRun_thenThrowsUnexpectedType() {
-		$this->assertRunThrows(new ModelDummy(), UnexpectedType::class);
+		$this->assertRunThrows(new RequestDummy(), UnexpectedType::class);
 	}
 
 	/**
@@ -77,7 +78,7 @@ class AddRuleTest extends TestCase {
 
 class AddRuleAction extends AbstractAction {
 
-	public function run($request) {
+	public function run(Request $request) {
 		if (!$request instanceof AddRuleRequest) {
 			throw new UnexpectedType;
 		}
@@ -89,7 +90,7 @@ class AddRuleAction extends AbstractAction {
 
 }
 
-class AddRuleRequest {
+class AddRuleRequest implements Request {
 
 	public $sensorId;
 

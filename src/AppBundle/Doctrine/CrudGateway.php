@@ -12,4 +12,8 @@ class CrudGateway extends EntityRepository implements CrudGatewayInterface {
 		$this->getEntityManager()->flush();
 	}
 
+	public function filter($criteria) {
+		
+	}
+
 }

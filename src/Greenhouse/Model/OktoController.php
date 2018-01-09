@@ -8,6 +8,8 @@ class OktoController {
 
 	private $name;
 
+	private $active;
+
 	public function getId() {
 		return $this->id;
 	}
@@ -18,6 +20,14 @@ class OktoController {
 
 	public function setName($name) {
 		$this->name = $name;
+	}
+
+	public function getActive() {
+		return $this->active;
+	}
+
+	public function setActive($active) {
+		$this->active = $active;
 	}
 
 }
