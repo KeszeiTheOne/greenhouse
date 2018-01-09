@@ -2,6 +2,12 @@
 
 namespace Crud\Testing\Gateway;
 
-class FinderGatewayDummy {
-	//put your code here
+use Crud\Gateway\FinderGateway;
+
+class FinderGatewayDummy implements FinderGateway {
+
+	public function find($id) {
+		
+	}
+
 }

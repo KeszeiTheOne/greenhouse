@@ -2,7 +2,9 @@
 
 namespace Greenhouse\OktoController\AddOktoController;
 
-class AddOktoControllerRequest {
+use Crud\Action\Request;
+
+class AddOktoControllerRequest implements Request {
 
 	public $name;
 

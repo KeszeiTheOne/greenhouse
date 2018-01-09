@@ -2,6 +2,8 @@
 
 namespace Crud\Gateway;
 
-interface CrudGatewayInterface extends PersisterGateway{
+use Crud\Action\FilteringGateway;
+
+interface CrudGatewayInterface extends PersisterGateway, FilteringGateway {
 	
 }
